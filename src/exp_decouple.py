@@ -1,10 +1,5 @@
 """Separating domain from detection quality.
 
-Section 5.11 left one confound: the two domains differ both in subject matter and in how well
-the neighbourhood signal detects corrupted labels (AUPRC 0.81 on CIFAR against 0.56 on
-molecules), so the pooled regression cannot say which of the two drives the reversal of the
-class-balance law.
-
 This experiment removes the confound from inside a single domain. CIFAR-10 one-vs-rest tasks
 are built at controlled minority fractions exactly as in exp_cifar.py, but the *cleaning*
 representation is progressively degraded with isotropic Gaussian noise while the downstream
@@ -24,7 +19,7 @@ from sklearn.metrics import roc_auc_score, average_precision_score
 sys.path.insert(0, os.path.dirname(__file__))
 from clean import (inject_noise, oof_probs, clean_labels, detection_metrics, knn_graph)
 
-RES = '/home/claude/fmclean/results'; CIF = '/home/claude/fmclean/cifar'
+RES = '/home/fmclean/results'; CIF = '/home/fmclean/cifar'
 PAIRS = [('none', '-'), ('cl', 'feat'), ('knn', 'feat'), ('fmclean-remove', 'feat'),
          ('fmclean-hybrid', 'feat'), ('fmclean-reweight', 'feat'),
          ('fmclean-capped', 'feat'), ('oracle', '-')]
