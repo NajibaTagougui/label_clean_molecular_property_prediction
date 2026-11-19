@@ -1,8 +1,6 @@
 """Robustness extension: all 12 Tox21 endpoints.
 
-Two purposes. (1) Check that the main findings replicate beyond the single endpoint used in
-Section 5. (2) Exploit the fact that Tox21's endpoints span a wide range of class balance, to turn
-the minority-class observation of Section 5.8 into a quantitative relationship.
+
 """
 import os, sys, time, pickle, argparse
 from collections import defaultdict
@@ -16,7 +14,7 @@ from clean import (inject_noise, reference_margin, oof_probs, clean_labels,
                    detection_metrics, knn_graph, desc_reference_matrix)
 RDLogger.DisableLog('rdApp.*')
 
-DATA = '/home/claude/data'; WORK = '/home/claude/fmclean/work'; RES = '/home/claude/fmclean/results'
+DATA = '/home/data'; WORK = '/home/fmclean/work'; RES = '/home/fmclean/results'
 ENDPOINTS = ['NR-AR', 'NR-AR-LBD', 'NR-AhR', 'NR-Aromatase', 'NR-ER', 'NR-ER-LBD',
              'NR-PPAR-gamma', 'SR-ARE', 'SR-ATAD5', 'SR-HSE', 'SR-MMP', 'SR-p53']
 # SIDER spans a far wider class-balance range (1.5%-92.4% positive) than Tox21 (3-19%),
@@ -48,7 +46,7 @@ def build_master(dataset='tox21', endpoints=None):
         cs, m = canon(str(r['smiles']))
         if cs is None: continue
         rows.append((cs, scaffold(m), {e: r[e] for e in endpoints}))
-    # merge duplicate canonical SMILES: per-endpoint majority vote over non-null values
+  
     agg = defaultdict(lambda: (None, defaultdict(list)))
     order = []
     for cs, sc, lab in rows:
