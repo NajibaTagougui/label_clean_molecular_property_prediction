@@ -4,7 +4,7 @@ import numpy as np, torch
 sys.path.insert(0, os.path.dirname(__file__))
 from model import MolEncoder, Vocab, embed
 
-WORK = '/home/claude/fmclean/work'
+WORK = '/home/fmclean/work'; RES = '/home/fmclean/results'
 DATASETS = ['bbbp', 'bace', 'clintox', 'tox21', 'sider', 'hiv']
 
 def load(tag):
