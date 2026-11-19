@@ -6,7 +6,7 @@ from scipy import stats
 import matplotlib; matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
-RES = '/home/claude/fmclean/results'; FIG = '/home/claude/fmclean/figs'
+RES = '/home/fmclean/results'; FIG = '/home/fmclean/figs'
 plt.rcParams.update({'font.size': 8.5, 'axes.grid': True, 'grid.alpha': .25, 'figure.dpi': 170,
                      'savefig.bbox': 'tight', 'axes.spines.top': False, 'axes.spines.right': False,
                      'legend.frameon': False, 'grid.linewidth': .5})
