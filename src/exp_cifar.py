@@ -16,7 +16,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 from clean import (inject_noise, reference_margin, oof_probs, clean_labels,
                    detection_metrics, knn_graph)
 
-RES = '/home/claude/fmclean/results'; CIF = '/home/claude/fmclean/cifar'
+RES = '/home/fmclean/results'; CIF = '/home/fmclean/cifar'
 PAIRS = [('none', '-'), ('cl', 'feat'), ('knn', 'feat'), ('fmclean-remove', 'feat'),
          ('fmclean-hybrid', 'feat'), ('fmclean-reweight', 'feat'),
          ('fmclean-capped', 'feat'), ('oracle', '-')]
