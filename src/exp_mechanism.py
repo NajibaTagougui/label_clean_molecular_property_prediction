@@ -1,20 +1,4 @@
-"""Reviewer M3: measure, rather than assert, why rare actives get flagged.
 
-The claim in Section 5.3 is that a minority-class example sits in a neighbourhood
-dominated by the majority class, so the neighbourhood signal and the probe both
-mark it anomalous for the same reason. That is a statement about the local class
-composition around flagged versus unflagged actives, and it is directly measurable.
-
-For each dataset and scaffold split we clean the ORIGINAL labels (no injected
-noise) in the ECFP4 space with FUSE-Hybrid, exactly as Section 5.3 does, and then
-compare, among training actives:
-
-    p_nb1 = similarity-weighted fraction of the k = 15 neighbourhood labelled active
-
-for the actives the cleaner flags against the actives it leaves alone. The same
-contrast is computed for inactives as a control: if the effect is about rarity
-rather than about flagging, it should be far weaker there.
-"""
 import os, sys, pickle
 import numpy as np, pandas as pd
 from sklearn.preprocessing import StandardScaler
@@ -23,7 +7,7 @@ from scipy.stats import mannwhitneyu
 sys.path.insert(0, os.path.dirname(__file__))
 from clean import clean_labels, knn_graph, knn_consensus, oof_probs
 
-WORK = '/home/claude/fmclean/work'; RES = '/home/claude/fmclean/results'
+WORK = '/home/fmclean/work'; RES = '/home/fmclean/results'
 DATASETS = ['bbbp', 'bace', 'clintox', 'tox21', 'sider']
 SPLITS = [f'scaffold_{s}' for s in (0, 1, 2)]
 K = 15
