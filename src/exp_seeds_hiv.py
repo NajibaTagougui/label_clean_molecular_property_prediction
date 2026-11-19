@@ -1,10 +1,4 @@
-"""Two robustness runs sharing one harness.
 
---what seeds : three independent noise draws per cell, so that noise-realisation variance can be
-               separated from split variance (every cell elsewhere uses a single draw).
---what hiv   : HIV (40,950 molecules, 3.4% positive) -- a 27x scale jump over the main grid and the
-               most extreme class imbalance available, which is where Section 5.8 predicts trouble.
-"""
 import os, sys, time, pickle, argparse, warnings
 import numpy as np, pandas as pd
 warnings.filterwarnings('ignore')
@@ -12,8 +6,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 from clean import (inject_noise, reference_margin, oof_probs, clean_labels,
                    detection_metrics, knn_graph, desc_reference_matrix)
 from exp_main import ALGO_MAP, ev
-
-WORK = '/home/claude/fmclean/work'; RES = '/home/claude/fmclean/results'
+RES = '/home/fmclean/results'; FIG = '/home/fmclean/figs'; WORK = '/home/fmclean/work'
 PAIRS = [('none', '-'), ('smallloss', 'ecfp'), ('cl', 'ecfp'), ('knn', 'ecfp'),
          ('fmclean-remove', 'ecfp'), ('fmclean-hybrid', 'ecfp'),
          ('fmclean-reweight', 'ecfp'), ('fmclean-capped', 'ecfp'), ('oracle', '-')]
