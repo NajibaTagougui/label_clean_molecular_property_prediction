@@ -8,7 +8,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 from clean import (inject_noise, reference_margin, oof_probs, clean_labels,
                    detection_metrics, knn_graph)
 
-WORK = '/home/claude/fmclean/work'; RES = '/home/claude/fmclean/results'
+WORK = '/home/fmclean/work'; RES = '/home/fmclean/results'
 DS = ['bbbp', 'bace', 'clintox', 'tox21']
 SPLITS = ['scaffold_0', 'scaffold_1', 'random_0']
 NOISE = [('sym', 0.3), ('inst', 0.3), ('asym', 0.3)]
