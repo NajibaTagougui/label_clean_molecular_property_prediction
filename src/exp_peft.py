@@ -1,6 +1,4 @@
-"""Experiment 2: parameter-efficient fine-tuning x label cleaning.
-Compares linear probe / BitFit / LoRA / full fine-tuning on noisy vs cleaned labels.
-"""
+
 import os, sys, json, time, pickle, copy, argparse
 import numpy as np, pandas as pd, torch, torch.nn as nn, torch.nn.functional as F
 from sklearn.preprocessing import StandardScaler
@@ -9,7 +7,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 from model import MolEncoder, Vocab, LoRALinear, encode_batch
 from clean import inject_noise, reference_margin, oof_probs, clean_labels
 
-WORK = '/home/claude/fmclean/work'; RES = '/home/claude/fmclean/results'
+RES = '/home/fmclean/results'; FIG = '/home/fmclean/figs'; WORK = '/home/fmclean/work'
 torch.set_num_threads(2)
 
 def load_fm(tag='pretrained'):
