@@ -15,7 +15,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 from clean import (inject_noise, reference_margin, oof_probs, clean_labels,
                    detection_metrics, knn_graph, knn_consensus, cl_prune_scores)
 
-WORK = '/home/claude/fmclean/work'; RES = '/home/claude/fmclean/results'
+WORK = '/home/fmclean/work'; RES = '/home/fmclean/results'
 DATASETS = ['bbbp', 'bace', 'clintox', 'tox21', 'sider']
 SPLITS = [f'{a}_{s}' for a in ('scaffold', 'random') for s in (0, 1, 2)]
 
