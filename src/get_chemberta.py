@@ -8,7 +8,7 @@ MODELS = {
     'chemberta_mtr': 'DeepChem/ChemBERTa-77M-MTR',
     'chemberta_zinc': 'seyonec/ChemBERTa-zinc-base-v1',
 }
-ROOT = '/home/claude/fmclean/hf'   # untrusted downloads live only here
+ROOT = '/home/fmclean/hf'  
 
 def fetch(repo, dest):
     os.makedirs(dest, exist_ok=True)
