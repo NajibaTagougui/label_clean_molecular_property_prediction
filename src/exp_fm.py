@@ -12,8 +12,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 from clean import (inject_noise, reference_margin, oof_probs, clean_labels,
                    detection_metrics, knn_graph, desc_reference_matrix)
 from exp_main import DATASETS, SPLITS, NOISE, ALGO_MAP, ev, K, ALPHA
-
-WORK = '/home/claude/fmclean/work'; RES = '/home/claude/fmclean/results'
+WORK = '/home/fmclean/work'; RES = '/home/fmclean/results'
 ALGOS = ['cl', 'knn', 'fmclean-hybrid', 'fmclean-remove']
 
 def run(datasets=DATASETS, splits=SPLITS, noise=NOISE, tags=('chemberta_mlm', 'chemberta_mtr'),
