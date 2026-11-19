@@ -1,13 +1,12 @@
-"""Compact SMILES transformer encoder: tokenizer, model, MLM pretraining, PEFT adapters."""
-import os, re, json, math, time, pickle
+"""Compact SMILES transformer encoderle
 import numpy as np, torch, torch.nn as nn, torch.nn.functional as F
-
-WORK = '/home/claude/fmclean/work'
+RES = '/home/fmclean/results'; FIG = '/home/fmclean/figs'; WORK = '/home/fmclean/work'
 torch.set_num_threads(2)
 
 SMI_RE = re.compile(r"(\[[^\]]+]|Br?|Cl?|N|O|S|P|F|I|b|c|n|o|s|p|\(|\)|\.|=|#|-|\+|\\|\/|:|~|@|\?|>|\*|\$|\%[0-9]{2}|[0-9])")
 PAD, CLS, MASK, UNK = 0, 1, 2, 3
-SPECIAL = ['<pad>', '<cls>', '<mask>', '<unk>']
+SPECIAL = ['<pad>', '<cls>', '<mas: tokenizer, model, MLM pretraining, PEFT adapters."""
+import os, re, json, math, time, pickk>', '<unk>']
 
 def tokenize(smi):
     return [t for t in SMI_RE.findall(smi) if t]
