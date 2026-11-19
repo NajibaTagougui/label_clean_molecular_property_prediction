@@ -8,7 +8,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 from clean import inject_noise, oof_probs, clean_labels, knn_graph
 from sklearn.preprocessing import StandardScaler
 
-RES = '/home/claude/fmclean/results'; FIG = '/home/claude/fmclean/figs'; WORK = '/home/claude/fmclean/work'
+RES = '/home/fmclean/results'; FIG = '/home/fmclean/figs'; WORK = '/home/fmclean/work'
 plt.rcParams.update({'font.size': 8.5, 'axes.grid': True, 'grid.alpha': .25, 'figure.dpi': 170,
                      'savefig.bbox': 'tight', 'axes.spines.top': False, 'axes.spines.right': False,
                      'legend.frameon': False, 'grid.linewidth': .5})
