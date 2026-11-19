@@ -5,7 +5,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 from model import (Vocab, build_vocab, MolEncoder, MLMHead, encode_batch,
                    PAD, CLS, MASK, UNK, tokenize)
 
-WORK = '/home/claude/fmclean/work'
+WORK = '/home/fmclean/work'
 torch.set_num_threads(2)
 MAX_LEN = 96
 
