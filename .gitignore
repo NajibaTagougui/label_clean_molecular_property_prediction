@@ -1,0 +1,11 @@
+results/
+work/
+data/
+__pycache__/
+*.pyc
+*.csv
+*.npz
+*.pkl
+*.pt
+*.png
+*.pdf
