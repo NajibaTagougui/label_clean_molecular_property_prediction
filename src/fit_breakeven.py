@@ -1,24 +1,10 @@
-"""Reviewer point 4: give the break-even curve a closed form.
 
-The manuscript reports the break-even detection quality at three minority
-fractions. A practitioner whose dataset sits between them needs to interpolate,
-so we fit a two-parameter curve through the three crossings and report it.
-
-The threshold is a probability, so it is fitted on the logit scale against the
-log of the minority fraction:
-
-    logit(t*) = a + b * ln(m)
-
-which keeps the prediction inside (0, 1) for every m and is linear in the two
-quantities the rule is stated in. We weight each crossing by the inverse width
-of its bootstrap interval, since the 2% crossing is the least precisely located.
-"""
 import numpy as np, pandas as pd
 
-T = pd.read_csv('/home/claude/fmclean/results/decouple_thresholds.csv')
+T = pd.read_csv('/home//fmclean/results/decouple_thresholds.csv')
 m = T.minority.values
 t = T.crossing.values
-w = 1.0 / (T.hi.values - T.lo.values)          # precision of each crossing
+w = 1.0 / (T.hi.values - T.lo.values)         
 
 logit = lambda p: np.log(p / (1 - p))
 sigmoid = lambda z: 1 / (1 + np.exp(-z))
