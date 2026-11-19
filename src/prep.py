@@ -8,8 +8,7 @@ from rdkit.Chem.Scaffolds import MurckoScaffold
 from rdkit.Chem import rdFingerprintGenerator
 RDLogger.DisableLog('rdApp.*'); warnings.filterwarnings('ignore')
 
-DATA = '/home/claude/data'
-WORK = '/home/claude/fmclean/work'
+RES = '/home/fmclean/results'; FIG = '/home/fmclean/figs'; WORK = '/home/fmclean/work'
 os.makedirs(WORK, exist_ok=True)
 
 TASKS = {
