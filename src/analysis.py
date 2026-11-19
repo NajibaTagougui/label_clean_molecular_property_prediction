@@ -5,7 +5,7 @@ import matplotlib; matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from scipy import stats
 
-RES = '/home/claude/fmclean/results'; FIG = '/home/claude/fmclean/figs'
+
 os.makedirs(FIG, exist_ok=True)
 plt.rcParams.update({'font.size': 8.5, 'axes.grid': True, 'grid.alpha': .25,
                      'figure.dpi': 170, 'savefig.bbox': 'tight', 'axes.spines.top': False,
