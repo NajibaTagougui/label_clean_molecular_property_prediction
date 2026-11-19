@@ -2,7 +2,7 @@ import numpy as np, pandas as pd
 from scipy import stats
 import statsmodels.formula.api as smf
 
-RES = '/home/claude/fmclean/results'
+RES = '/home/fmclean/results'
 d = pd.read_csv(f'{RES}/exp_decouple.csv')
 key = ['minority_target', 'pos_class', 'split', 'lam', 'noise', 'rate']
 
