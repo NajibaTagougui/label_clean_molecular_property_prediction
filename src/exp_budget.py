@@ -17,7 +17,7 @@ from clean import (inject_noise, reference_margin, oof_probs, clean_labels,
 from exp_main import DATASETS, SPLITS, NOISE, ALGO_MAP, ev
 from cleanlab.count import num_label_issues
 
-WORK = '/home/claude/fmclean/work'; RES = '/home/claude/fmclean/results'
+WORK = '/home/fmclean/work'; RES = '/home/fmclean/results'
 PAIRS = [('none', '-'), ('smallloss', 'ecfp'), ('cl', 'ecfp'), ('knn', 'ecfp'),
          ('fmclean-remove', 'ecfp'), ('fmclean-hybrid', 'ecfp'),
          ('fmclean-reweight', 'ecfp'), ('fmclean-capped', 'ecfp'), ('oracle', '-')]
